@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sermons",
+  "info": {
+    "singularName": "sermon",
+    "pluralName": "sermons",
+    "displayName": "Sermon",
+    "description": "Weekly sermon entries"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "title":       { "type": "string", "required": true, "maxLength": 255 },
+    "date":        { "type": "date",   "required": false },
+    "summary":     { "type": "text",   "required": true },
+    "image":       { "type": "media",  "multiple": false, "required": false, "allowedTypes": ["images"] },
+    "youtube_url": { "type": "string", "required": false, "maxLength": 500 }
+  }
+}

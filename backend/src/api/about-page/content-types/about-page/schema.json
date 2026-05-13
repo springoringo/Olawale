@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
+    "description": "Content for the About page"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "pastor_name":        { "type": "string",   "required": true, "maxLength": 100 },
+    "pastor_title":       { "type": "string",   "required": true, "maxLength": 100 },
+    "quote":              { "type": "string",   "required": false, "maxLength": 300 },
+    "photo":              { "type": "media",    "multiple": false, "required": false, "allowedTypes": ["images"] },
+    "bio":                { "type": "richtext", "required": true },
+    "roles":              { "type": "text",     "required": false },
+    "section_pharaoh":    { "type": "richtext", "required": false },
+    "section_ebenezer":   { "type": "richtext", "required": false },
+    "section_loins":      { "type": "richtext", "required": false },
+    "credentials":        { "type": "text",     "required": false }
+  }
+}

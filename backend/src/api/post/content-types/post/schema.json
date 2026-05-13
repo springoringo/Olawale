@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Blog Post",
+    "description": "Pastoral blog posts and monthly write-ups"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "title":  { "type": "string", "required": true, "maxLength": 255 },
+    "date":   { "type": "date",   "required": false },
+    "body":   { "type": "richtext", "required": true },
+    "image":  { "type": "media",   "multiple": false, "required": false, "allowedTypes": ["images"] }
+  }
+}

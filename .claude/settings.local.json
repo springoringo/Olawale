@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:docs.strapi.io)",
+      "WebFetch(domain:strapi.io)",
+      "Bash(npx create-strapi@latest:*)",
+      "Bash(printf N\\\\nY\\\\n:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(node:*)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:rccgovercomerschapel.org)",
+      "WebFetch(domain:subsplash.com)",
+      "WebFetch(domain:femiolawale.com)",
+      "WebFetch(domain:www.listennotes.com)",
+      "Bash(mkdir:*)",
+      "Bash(curl:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd:*)",
+      "Bash(xargs -I{} cmd //c \"taskkill /PID {} /F\")",
+      "Bash(while read pid)",
+      "Bash(do cmd //c \"taskkill /PID $pid /F\")",
+      "Bash(done)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(python3:*)",
+      "PowerShell(Start-Process powershell -ArgumentList '-NoExit', '-Command', 'Set-Location \"C:\\\\React\\\\Olawale\\\\backend\"; npm run develop' -WindowStyle Normal)",
+      "PowerShell(Start-Process powershell -ArgumentList '-NoExit', '-Command', 'Set-Location \"C:\\\\React\\\\Olawale\\\\frontend\"; npm run dev' -WindowStyle Normal)",
+      "PowerShell(node --version)",
+      "PowerShell(gh *)",
+      "PowerShell(winget install *)"
+    ]
+  }
+}

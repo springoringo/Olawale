@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage"
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "hero_subtitle": {
+      "type": "text",
+      "required": false
+    },
+    "hero_cta_text": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100,
+      "default": "Browse Sermons"
+    },
+    "hero_cta_url": {
+      "type": "string",
+      "required": false,
+      "maxLength": 200,
+      "default": "/sermons"
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 const frontendUrl = process.env.FRONTEND_URL;
 
-const allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:3000'];
+const allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://olawale-silk.vercel.app'];
 if (frontendUrl) allowedOrigins.push(frontendUrl);
 
 export default [

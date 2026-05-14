@@ -1,3 +1,8 @@
+const frontendUrl = process.env.FRONTEND_URL;
+
+const allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:3000'];
+if (frontendUrl) allowedOrigins.push(frontendUrl);
+
 export default [
   'strapi::logger',
   'strapi::errors',
@@ -5,9 +10,8 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
       headers: '*',
-      origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+      origin: allowedOrigins,
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       keepHeaderOnError: true,
     },

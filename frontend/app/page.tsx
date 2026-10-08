@@ -18,7 +18,7 @@ export default async function HomePage() {
   let hero: Homepage = FALLBACK_HERO;
 
   await Promise.allSettled([
-    getSermons().then((r) => { sermons = r.data.slice(0, 6); }),
+    getSermons(undefined, 1, 6).then((r) => { sermons = r.data.slice(0, 6); }),
     getHomepage().then((r) => { if (r.data?.hero_title) hero = r.data; }),
   ]);
 
@@ -156,6 +156,17 @@ export default async function HomePage() {
           sermons={sermons}
           emptyMessage="No sermons published yet. Check back soon!"
         />
+        <div className="mt-10 text-center">
+          <Link
+            href="/sermons"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-3 shadow-sm transition-colors"
+          >
+            View all sermons
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
       </section>
     </div>
   );

@@ -18,7 +18,11 @@ async function strapiGet<T>(url: string): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-export async function getSermons(query?: string): Promise<StrapiListResponse<Sermon>> {
+export async function getSermons(
+  query?: string,
+  page = 1,
+  pageSize = 25,
+): Promise<StrapiListResponse<Sermon>> {
   const params: Record<string, string> = {
     'populate[image][fields][0]': 'url',
     'populate[image][fields][1]': 'alternativeText',
@@ -26,6 +30,8 @@ export async function getSermons(query?: string): Promise<StrapiListResponse<Ser
     'populate[image][fields][3]': 'height',
     'populate[image][fields][4]': 'formats',
     'sort[0]': 'publishedAt:desc',
+    'pagination[page]': String(page),
+    'pagination[pageSize]': String(pageSize),
   };
 
   if (query) {

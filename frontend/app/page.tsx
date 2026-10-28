@@ -2,6 +2,8 @@ import Link from 'next/link';
 import type { Sermon, Homepage } from '@/lib/types';
 import { getSermons, getHomepage, getStrapiMediaUrl } from '@/lib/strapi';
 import SermonGrid from '@/components/SermonGrid';
+import BooksCarousel from '@/components/BooksCarousel';
+import { BOOKS } from '@/lib/books';
 
 const FALLBACK_HERO: Homepage = {
   hero_title: 'Grow in Faith &\nGod\'s Word',
@@ -133,6 +135,27 @@ export default async function HomePage() {
               <p className="text-indigo-200 text-sm mt-0.5">{label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Books ────────────────────────────────────────────────────── */}
+      <section className="bg-indigo-50 border-b border-indigo-100">
+        <div className="max-w-5xl mx-auto px-4 py-16">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-1">
+                Books
+              </p>
+              <h2 className="text-2xl font-bold text-gray-900">Books by Pastor Femi</h2>
+            </div>
+            <Link
+              href="/books"
+              className="text-indigo-600 hover:text-indigo-800 font-medium text-sm transition-colors"
+            >
+              View all →
+            </Link>
+          </div>
+          <BooksCarousel books={BOOKS} />
         </div>
       </section>
 

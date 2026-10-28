@@ -17,36 +17,42 @@ export default function BooksPage() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {BOOKS.map((book) => (
-            <article key={book.href} className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
-              <a href={book.href} target="_blank" rel="noopener noreferrer" className="block bg-indigo-50 p-8">
-                <div className="relative mx-auto w-48 aspect-[505/726] shadow-xl">
-                  <Image src={book.cover} alt={`${book.title} cover`} fill sizes="192px" className="object-cover" />
-                </div>
-              </a>
-              <div className="p-6 flex flex-col flex-1">
-                <h2 className="text-xl font-bold text-gray-900">{book.title}</h2>
-                <p className="text-gray-600 mt-1">by {book.author}</p>
-                <p className="text-sm text-gray-500 mt-1">{book.note}</p>
-                <div className="mt-4 mb-6 space-y-3 text-sm text-gray-600 leading-relaxed">
-                  {book.description.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                </div>
-                <a
-                  href={book.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto self-start inline-block text-center rounded-full bg-indigo-700 text-white font-semibold px-6 py-2.5 hover:bg-indigo-800 transition-colors"
-                >
-                  Buy on Amazon
-                </a>
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 space-y-12">
+        {BOOKS.map((book) => (
+          <article
+            key={book.href}
+            className="bg-white rounded-2xl shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-[320px_1fr]"
+          >
+            <a
+              href={book.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center bg-indigo-50 p-8 md:p-12"
+            >
+              <div className="relative w-52 md:w-56 aspect-[505/726] shadow-xl">
+                <Image src={book.cover} alt={`${book.title} cover`} fill sizes="224px" className="object-cover" />
               </div>
-            </article>
-          ))}
-        </div>
+            </a>
+            <div className="p-8 md:p-12 flex flex-col justify-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{book.title}</h2>
+              <p className="text-gray-600 mt-2">by {book.author}</p>
+              {book.note && <p className="text-sm text-gray-500 mt-1">{book.note}</p>}
+              <div className="mt-6 mb-8 space-y-4 text-gray-600 leading-relaxed">
+                {book.description.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+              <a
+                href={book.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="self-start inline-block text-center rounded-full bg-indigo-700 text-white font-semibold px-8 py-3 hover:bg-indigo-800 transition-colors"
+              >
+                Buy on Amazon
+              </a>
+            </div>
+          </article>
+        ))}
       </section>
     </div>
   );

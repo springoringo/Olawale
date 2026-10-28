@@ -14,7 +14,10 @@ export default function Navbar() {
           <Link href="/sermons" className="text-gray-600 hover:text-indigo-700 font-medium transition-colors">
             Sermons
           </Link>
-          <Link href="/blog" className="text-gray-600 hover:text-indigo-700 font-medium transition-colors">
+          <Link href="/books" className="text-gray-600 hover:text-indigo-700 font-medium transition-colors">
+            Books
+          </Link>
+          <Link href="/blog"className="text-gray-600 hover:text-indigo-700 font-medium transition-colors">
             Blog
           </Link>
           <Link href="/about" className="text-gray-600 hover:text-indigo-700 font-medium transition-colors">
